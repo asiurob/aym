@@ -1,0 +1,66 @@
+<div class="page-wrapper chiller-theme toggled">
+  <a id="show-sidebar" class="btn btn-sm btn-dark">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar" class="sidebar-wrapper">
+    <div class="sidebar-content">
+      <div class="sidebar-brand">
+        <a>AYM Sistemas</a>
+        <div id="close-sidebar">
+          <i class="fas fa-times"></i>
+        </div>
+      </div>
+      <div class="sidebar-header">
+        <div class="user-pic">
+          <img class="img-responsive img-rounded"
+            src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
+            alt="User picture">
+        </div>
+        <div class="user-info">
+          <span class="user-name">
+            <strong>{{ name }}</strong>
+          </span>
+          <span class="user-role">{{role}}</span>
+          <span class="user-status">
+            <i class="fa fa-circle"></i>
+            <span>Online</span>
+          </span>
+        </div>
+      </div>
+      <div class="sidebar-menu">
+        <ul>
+          <li class="header-menu">
+            <span>Menú</span>
+          </li>
+          <li class="sidebar-dropdown">
+            <a style="cursor:pointer !important;">
+              <i class="fas fa-users"></i>
+              <span>CRM</span>
+            </a>
+            <div class="sidebar-submenu">
+              <ul>
+                <li routerLinkActive="active"><a [routerLink]="[ '/crm/clientes']">Clientes</a></li>
+                <li routerLinkActive="active"><a [routerLink]="[ '/crm/empresas']">Empresas</a></li>
+                <li routerLinkActive="active"><a [routerLink]="[ '/crm/rrhh']">RRHH</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="sidebar-footer">
+      <a>
+        <i class="fa fa-cog"></i>
+      </a>
+      <a (click)="salir()">
+        <i class="fa fa-power-off"></i>
+        <span class="badge-sonar"></span>
+      </a>
+    </div>
+  </nav>
+  <main class="page-content">
+    <div class="container-fluid">
+        <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

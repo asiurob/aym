@@ -1,0 +1,35 @@
+<div class="main">
+  <div class="container">
+    <div class="row pt-5">
+      <div class="col-sm-4 offset-sm-4 text-center">
+        <img src="./assets/images/amw.png" alt=""><hr>
+        
+        <form [formGroup]="form" (ngSubmit)="login()">
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary">
+                <i class="fas fa-user text-light"></i>
+              </span>
+            </div>
+            <input formControlName="user" name="user" required
+            type="text" class="form-control" placeholder="Usuario">
+          </div>
+          <div class="input-group mb-3 input-group-lg">
+            <div class="input-group-prepend">
+              <span class="input-group-text bg-primary">
+                  <i class="fas fa-key text-light"></i>
+              </span>
+            </div>
+            <input formControlName="password" name="password" required
+            type="password" class="form-control" placeholder="Contraseña">
+          </div>
+          <button [disabled]="!form.valid" class="btn btn-outline-light btn-lg btn-block">Ingresar</button>
+          <div *ngIf="err" class="alert alert-danger alert-dismissible fade show mt-2 fs08 p-1">
+            <strong>{{ err_message }}</strong><br>
+            {{ err_text }} <i>(code {{ err_code }})</i>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
